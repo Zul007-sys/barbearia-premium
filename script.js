@@ -4,14 +4,14 @@ if (anoAtual) {
   anoAtual.textContent = new Date().getFullYear();
 }
 
-const botaoWhatsApp = document.getElementById("botao-whatsapp");
-
-// Substitua pelo numero real da barbearia.
-// Use codigo do pais + DDD + numero, somente digitos.
+// Configure aqui o telefone real da barbearia.
+// Formato: codigo do pais + DDD + telefone, somente numeros.
 const telefoneWhatsApp = "5521999999999";
 
+const botaoWhatsApp = document.getElementById("botao-whatsapp");
+
 if (botaoWhatsApp) {
-  botaoWhatsApp.onclick = function (evento) {
+  botaoWhatsApp.addEventListener("click", function (evento) {
     evento.preventDefault();
 
     if (telefoneWhatsApp === "5521999999999") {
@@ -20,12 +20,12 @@ if (botaoWhatsApp) {
     }
 
     const mensagem = encodeURIComponent(
-      "Ola! Encontrei o site da Barbearia Premium e gostaria de consultar os horarios disponiveis para agendar um servico.",
+      "Ola! Acessei o site da Barbearia Premium e gostaria de agendar um horario. Quais servicos e horarios estao disponiveis?",
     );
 
     const enderecoWhatsApp =
       "https://wa.me/" + telefoneWhatsApp + "?text=" + mensagem;
 
     window.open(enderecoWhatsApp, "_blank");
-  };
+  });
 }
