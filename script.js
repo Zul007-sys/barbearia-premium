@@ -47,6 +47,6 @@ if (botaoWhatsApp) {
       "https://wa.me/" + telefoneWhatsApp + "?text=" + mensagemCodificada;
 
     // Abre o WhatsApp em uma nova aba
-    window.open(enderecoWhatsApp, "_blank");
+    window.open(enderecoWhatsApp, "_blank", "noopener,noreferrer");
   });
 }
